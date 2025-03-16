@@ -31,7 +31,7 @@ void BuscarPacientePorNome(){
 
         while (fread(&pacientes, sizeof(Paciente), 1, ptarqPaciente)){
             if (strcmp(nome, pacientes.nome) == 0) 
-                printf("nome: %s\nCPF: %s\nData nascimento: %s\ntelefone: %s\n", pacientes.nome, pacientes.CPF, pacientes.data_de_nascimento);
+                printf("nome: %s\nCPF: %s\nData nascimento: %s\ntelefone: %s\n", pacientes.nome, pacientes.CPF, pacientes.data_de_nascimento, pacientes.telefone);
             printf("paciente nao encontrado");
         }
         fclose(ptarqPaciente);   
@@ -49,7 +49,7 @@ void AlterarDadosPaciente(){
         int controle = 0, achou = 0;
         while(fread(&newPaciente, sizeof (Paciente), 1, ptarqPaciente)){
             if (strcmp(nomeAlterar, newPaciente.nome)==0){
-              printf("Dados Encontrados: \n Nome: %s, CPF: %s, data de nascimento: %s, telefone: %s", newPaciente.nome , newPaciente.cpf, newPaciente.data_de_nascimento, newPaciente.telefone);
+              printf("Dados Encontrados: \n Nome: %s, CPF: %s, data de nascimento: %s, telefone: %s", newPaciente.nome , newPaciente.CPF, newPaciente.data_de_nascimento, newPaciente.telefone);
               achou = 1;
               break;	  
               }
